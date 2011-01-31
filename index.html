@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="json.js" type="application/javascript"></script>
+		<script src="jquery.js" type="application/javascript"></script>
+		<script src="socket.io.js" type="application/javascript"></script>
+		<script>
+			socket = new io.Socket('localhost');
+			socket.connect();
+			socket.on('message', function(json){
+				$('<li>')
+					.text(JSON.stringify(json.payload))
+					.appendTo($('ul#messages'))
+			});
+		</script>
+	</head>
+	<body>
+		<form>
+			<h1>Events</h1>
+			<ul id="messages"></ul>
+		</form>
+	</body>
+</html>
