@@ -5,7 +5,9 @@ $ brew install node
 Install npm
 
 $ npm install socket.io
+
 $ npm install amqp
+
 $ npm install underscore
 
 $ node server.js
